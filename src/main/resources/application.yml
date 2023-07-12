@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://localhost:3306
+      username:
+  jpa:
+    hibernate:
+      show_sql: true
+      format_sql: true
+      ddl-auto: create
+    datasource:
+      url: jdbc:mysql://localhost:3306/datajpa
+      username: root
+      password: 316201
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
