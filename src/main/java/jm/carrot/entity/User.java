@@ -1,6 +1,7 @@
 package jm.carrot.entity;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -10,8 +11,14 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String mobileNumber;
+
+    @Builder
+    public User(Long id, String mobileNumber) {
+        this.id = id;
+        this.mobileNumber = mobileNumber;
+    }
 }
