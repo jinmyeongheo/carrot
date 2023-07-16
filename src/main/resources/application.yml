@@ -12,6 +12,20 @@ spring:
     password: 316201
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+springdoc:
+  api-docs:
+    enabled: true
+    path: /docs/json
+
+  swagger-ui:
+    enabled: true
+    path: /docs
+    display-request-duration: true
+
+  cache:
+    disabled: true
+
+
 logging:
   level:
     org:
