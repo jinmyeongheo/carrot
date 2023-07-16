@@ -3,7 +3,7 @@ package jm.carrot.converter;
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 
-@Converter(autoApply = true)
+@Converter
 public class BooleanToYNConverter implements AttributeConverter<Boolean, String> {
     @Override
     public String convertToDatabaseColumn(Boolean attribute) {
