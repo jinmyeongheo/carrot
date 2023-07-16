@@ -3,14 +3,28 @@ package jm.carrot.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import jm.carrot.dto.request.SignInRequest;
+import jm.carrot.dto.response.ApiResponse;
+import jm.carrot.entity.User;
+import jm.carrot.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-@Tag(name="샘플 컨트롤러입니다.")
+@Tag(name="회원가입")
 @RestController
+@RequiredArgsConstructor
 public class UserController {
+
+    private final UserRepository userRepository;
+
+    @PostMapping("/sign-in")
+    public ResponseEntity<ApiResponse> signIn(@RequestBody SignInRequest signInRequest){
+        User build = User.builder().mobileNumber(signInRequest.getMobileNumber()).build();
+        userRepository.save(build);
+        return ResponseEntity.status(HttpStatus.OK).body(ApiResponse.createSuccessWithNoContent());
+    }
 
     @Operation(summary = "get test api summary", description = "[@Operation] get test api")
     @GetMapping("/get/{id}")
