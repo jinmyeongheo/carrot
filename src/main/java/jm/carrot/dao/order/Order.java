@@ -25,4 +25,7 @@ public class Order {
 
     // 거래 상태
     private OrderState state;
+
+    // 가맹점 수수료
+    private BigDecimal feeRate;
 }

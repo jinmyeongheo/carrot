@@ -1,8 +1,10 @@
 package jm.carrot.enums;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
+@Getter
 public enum OrderState implements LegacyEnum{
     // 취소
     CANCEL("08"),
