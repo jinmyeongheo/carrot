@@ -19,6 +19,7 @@ public class UserController {
 
     private final UserRepository userRepository;
 
+    // 회원가입
     @PostMapping("/sign-in")
     public ResponseEntity<ApiResponse> signIn(@RequestBody SignInRequest signInRequest){
         User build = User.builder().mobileNumber(signInRequest.getMobileNumber()).build();
