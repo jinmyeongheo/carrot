@@ -1,10 +1,9 @@
 package jm.carrot.dao.User;
 
-import jm.carrot.converter.BooleanToYNConverter;
+import jm.carrot.converter.BooleanToYnConverter;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.Convert;
 import javax.persistence.Entity;
@@ -33,7 +32,7 @@ public class User {
 
     private LocalDate birthday;
 
-    @Convert(converter = BooleanToYNConverter.class)
+    @Convert(converter = BooleanToYnConverter.class)
     private boolean deleted;
 
 }
