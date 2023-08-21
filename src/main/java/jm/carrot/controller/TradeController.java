@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class TradeController {
+    // 주석추가
     private final DeliveryAgencyService deliveryAgencyService;
     private final MerchantRepository merchantRepository;
     private final DeliveryAgencyRepository deliveryAgencyRepository;
