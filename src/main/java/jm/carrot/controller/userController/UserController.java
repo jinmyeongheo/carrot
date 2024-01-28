@@ -1,4 +1,4 @@
-package jm.carrot.controller;
+package jm.carrot.controller.userController;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -28,5 +28,11 @@ public class UserController {
     @GetMapping("/happy")
     public String test1(){
         return "hello";
+    }
+
+    @GetMapping("/user/name")
+    public String userName(){
+
+        return "user";
     }
 }
