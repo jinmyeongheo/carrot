@@ -1,4 +1,4 @@
-package jm.carrot.dao.deliveryAgencyMappingInfo;
+package jm.carrot.domain.entity.deliveryAgencyMappingInfo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

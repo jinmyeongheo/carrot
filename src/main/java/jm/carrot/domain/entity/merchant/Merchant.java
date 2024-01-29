@@ -1,38 +1,31 @@
-package jm.carrot.dao.User;
+package jm.carrot.domain.entity.merchant;
 
-import jm.carrot.converter.BooleanToYnConverter;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDate;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class User {
+public class Merchant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //이메일
-    private String email;
-
-    private String password;
-
     private String name;
 
-    private String tel;
+    private String regId;
 
-    private LocalDate birthday;
-
-    @Convert(converter = BooleanToYnConverter.class)
-    private boolean deleted;
-
+    @Builder
+    public Merchant(String name, String regId) {
+        this.name = name;
+        this.regId = regId;
+    }
 }

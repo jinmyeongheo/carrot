@@ -1,11 +1,9 @@
 package jm.carrot.controller;
 
-import jm.carrot.dao.merchant.MerchantRepository;
-import jm.carrot.dao.order.deliveryAgency.DeliveryAgency;
-import jm.carrot.dao.order.deliveryAgency.DeliveryAgencyRepository;
-import jm.carrot.service.DeliveryAgencyService;
+import jm.carrot.domain.entity.merchant.Merchant;
+import jm.carrot.domain.entity.order.deliveryAgency.DeliveryAgencyRepository;
+import jm.carrot.domain.repository.MerchantRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +13,6 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class TradeController {
-    private final DeliveryAgencyService deliveryAgencyService;
     private final MerchantRepository merchantRepository;
     private final DeliveryAgencyRepository deliveryAgencyRepository;
 
@@ -29,8 +26,7 @@ public class TradeController {
         list.add("5");
         list.add("6");
         list.add("7");
-        deliveryAgencyService.registerDeliveryAgency(list, 1L);
-
+        Merchant byId = merchantRepository.findById(1L);
         return "성공";
 
     }

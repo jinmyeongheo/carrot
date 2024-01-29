@@ -1,4 +1,4 @@
-package jm.carrot.dao.order;
+package jm.carrot.domain.entity.order;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;

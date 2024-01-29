@@ -1,7 +1,6 @@
-package jm.carrot.dao.order.deliveryAgency;
+package jm.carrot.domain.entity.order.deliveryAgency;
 
 import jm.carrot.converter.BooleanToYnConverter;
-import jm.carrot.dao.entity.common.TimeStampInfo;
 import lombok.*;
 
 import javax.persistence.*;

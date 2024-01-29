@@ -1,7 +1,7 @@
-package jm.carrot.dao.deliveryAgencyMappingInfo;
+package jm.carrot.domain.entity.deliveryAgencyMappingInfo;
 
-import jm.carrot.dao.merchant.Merchant;
-import jm.carrot.dao.order.deliveryAgency.DeliveryAgency;
+import jm.carrot.domain.entity.merchant.Merchant;
+import jm.carrot.domain.entity.order.deliveryAgency.DeliveryAgency;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

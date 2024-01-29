@@ -1,4 +1,4 @@
-package jm.carrot.dao.entity.common;
+package jm.carrot.domain.entity.common;
 
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
