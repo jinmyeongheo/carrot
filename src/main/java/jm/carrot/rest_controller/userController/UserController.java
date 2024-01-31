@@ -1,4 +1,4 @@
-package jm.carrot.controller.userController;
+package jm.carrot.rest_controller.userController;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

@@ -1,4 +1,4 @@
-package jm.carrot.controller;
+package jm.carrot.rest_controller;
 
 import jm.carrot.domain.entity.merchant.Merchant;
 import jm.carrot.domain.entity.order.deliveryAgency.DeliveryAgencyRepository;
