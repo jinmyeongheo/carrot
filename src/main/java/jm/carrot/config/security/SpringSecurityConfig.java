@@ -1,5 +1,8 @@
-package jm.carrot.config;
+package jm.carrot.config.security;
 
+import jm.carrot.config.security.CustomAuthSuccessHandler;
+import jm.carrot.config.security.CustomAuthenticationFailureHandler;
+import jm.carrot.config.security.CustomAuthenticationSuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -13,11 +16,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
     http.formLogin()
         .loginPage("/login-page") // 설정안하면 스프링디폴트 로그인페이지 호출됨. /login
-        .loginProcessingUrl("/login-process") // 로그인인증필터
+        .loginProcessingUrl("/login-process") // 로그인인증필터 -> login form 요청 url
         .defaultSuccessUrl("/main") // 성공했을 때 이동 페이지
         .successHandler(new CustomAuthenticationSuccessHandler("/main")) // 인증성공 후 필요한 핸들러등록
-        .failureUrl("login-fail") // 로그인 실패시 이동페이지
+        .failureUrl("/login-fail") // 로그인 실패시 이동페이지
         .failureHandler(new CustomAuthenticationFailureHandler("/login-fail")) //실패시 커스텀 핸들러 등록
+        .and()
+        .authorizeRequests().anyRequest()
         .permitAll()
     ;
   }

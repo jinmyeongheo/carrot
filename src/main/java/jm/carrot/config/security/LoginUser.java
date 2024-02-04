@@ -1,4 +1,4 @@
-package jm.carrot.config;
+package jm.carrot.config.security;
 
 import java.util.Collection;
 import lombok.AllArgsConstructor;
